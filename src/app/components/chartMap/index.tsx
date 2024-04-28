@@ -37,7 +37,7 @@ const ChartMap: React.FC = () => {
         chartRef.current.resize();
       });
 
-      echarts.registerMap('World', (worldJson as GeoJSONSourceInput), {
+      echarts.registerMap('World', (worldJson as any), {
         Alaska: {
           // 把阿拉斯加移到美国主大陆左下方
           left: -131,
