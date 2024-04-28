@@ -30,10 +30,10 @@ const ChatDistribution: React.FC = () => {
       chartRef.current = echarts.init(domRef.current);
 
       const option = {
-        title: {
-          text: 'Movie and TV Show height and weight distribution',
-          subtext: 'Data from: Heinz 2003'
-        },
+        // title: {
+        //   text: 'Movie and TV Show height and weight distribution',
+        //   subtext: 'Data from: Heinz 2003'
+        // },
         grid: {
           left: '3%',
           right: '7%',
@@ -74,14 +74,14 @@ const ChatDistribution: React.FC = () => {
             }
           }
         },
-        toolbox: {
-          feature: {
-            dataZoom: {},
-            brush: {
-              type: ['rect', 'polygon', 'clear']
-            }
-          }
-        },
+        // toolbox: {
+        //   feature: {
+        //     dataZoom: {},
+        //     brush: {
+        //       type: ['rect', 'polygon', 'clear']
+        //     }
+        //   }
+        // },
         brush: {},
         legend: {
           data: ['TV Show', 'Movie'],

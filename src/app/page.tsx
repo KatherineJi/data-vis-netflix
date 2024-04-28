@@ -27,7 +27,7 @@ export default function Home() {
     <main className={styles.main}>
       <div style={{ position: 'fixed', top: 0, height: '56px', width: '100%', zIndex: 1, background: 'black', color: 'white', lineHeight: '56px', paddingLeft: '32px' }}>NETFLIX</div>
       <div style={{ display: 'flex', marginTop: '56px' }}>
-        <div style={{ width: 256, flexShrink: 0 }}>
+        <div style={{ width: 256, flexShrink: 0, background: 'white' }}>
           <Menu setCurrent={setCurrent} />
         </div>
 
@@ -52,16 +52,12 @@ export default function Home() {
         </div>
 
         <div style={{ width: '300px', flexShrink: 0 }}>
+          <div style={{ padding: '24px', background: '#eee' }}>Welcome Back!</div>
+          
           <Space direction="vertical" size={16}>
-            <Card title="Welcome Back!" style={{ width: 300 }}>
-              <p>Global content</p>
-              <p>Card content</p>
-              <p>Card content</p>
-            </Card>
-            <Card size="small" title="Small size card"  style={{ width: 300 }}>
-              <p>Card content</p>
-              <p>Card content</p>
-              <p>Card content</p>
+            <Card title="Global distribution View" style={{ width: 300, borderRadius: 0 }}>
+              <p>Country: 129</p>
+              <p>Occurrences: 129</p>
             </Card>
           </Space>
         </div>

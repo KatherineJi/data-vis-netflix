@@ -36,9 +36,9 @@ const ChatStacked: React.FC = () => {
 
       const option = {
         color: ['rgb(128, 255, 165)', 'rgb(1, 191, 236)', 'rgb(255, 134, 133)', 'rgb(117, 112, 179)', 'rgb(254, 224, 139)', 'rgb(230, 97, 1)', 'rgb(94, 60, 153)', 'rgb(255, 217, 102)'],
-        title: {
-          text: 'Gradient Stacked Area Chart'
-        },
+        // title: {
+        //   text: 'Gradient Stacked Area Chart'
+        // },
         tooltip: {
           trigger: 'axis',
           axisPointer: {
@@ -51,11 +51,11 @@ const ChatStacked: React.FC = () => {
         legend: {
           data: ['Comedy', 'Kid&Children', 'Horror&Thriller', 'Romance', 'Drama', 'Documentary', 'Reality', 'Sci-Fi']
         },
-        toolbox: {
-          feature: {
-            saveAsImage: {}
-          }
-        },
+        // toolbox: {
+        //   feature: {
+        //     saveAsImage: {}
+        //   }
+        // },
         grid: {
           left: '3%',
           right: '4%',

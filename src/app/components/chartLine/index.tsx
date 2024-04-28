@@ -76,7 +76,7 @@ const ChatLine: React.FC = () => {
           name: type,
           endLabel: {
             show: true,
-            formatter: function (params: any) {
+            formatter: (params: any) => {
               return params.value[1] + ': ' + params.value[0];
             }
           },
@@ -105,9 +105,9 @@ const ChatLine: React.FC = () => {
           },
           ...datasetWithFilters
         ],
-        title: {
-          text: 'Income of Germany and France since 1950'
-        },
+        // title: {
+        //   text: 'Income of Germany and France since 1950'
+        // },
         tooltip: {
           order: 'valueDesc',
           trigger: 'axis'
@@ -121,7 +121,7 @@ const ChatLine: React.FC = () => {
           name: 'Ratings'
         },
         grid: {
-          right: 140
+          right: 120
         },
         series: seriesList
       };

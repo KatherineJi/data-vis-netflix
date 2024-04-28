@@ -34,11 +34,11 @@ const items: MenuProps['items'] = [
 
   { type: 'divider' },
 
-  getItem('Cross Analysis', 'sub2', <AppstoreOutlined />, [
-    getItem('Area * Type * Rating', '5'),
-    getItem('User * Type', '6'),
-    getItem('User * Periodicity', '7'),
-  ]),
+  // getItem('Cross Analysis', 'sub2', <AppstoreOutlined />, [
+  //   getItem('Area * Type * Rating', '5'),
+  //   getItem('User * Type', '6'),
+  //   getItem('User * Periodicity', '7'),
+  // ]),
 ];
 
 const MenuComp = (props: { setCurrent: Function }) => {
