@@ -71,7 +71,8 @@ const ChatStacked: React.FC = () => {
         ],
         yAxis: [
           {
-            type: 'value'
+            type: 'value',
+            max: 100,
           }
         ],
         series: data.map((item) => {
