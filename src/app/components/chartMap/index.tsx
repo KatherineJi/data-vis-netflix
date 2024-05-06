@@ -1,18 +1,12 @@
 'use client';
 
 import React, { useEffect, useRef } from 'react';
-import { AppstoreOutlined, MailOutlined, SettingOutlined } from '@ant-design/icons';
-import type { MenuProps } from 'antd';
-import { Menu } from 'antd';
-// import * as echarts from 'echarts';
 import worldJson from '../../../json/geo-world.json';
 import * as echarts from 'echarts/core';
-// import { MapInput } from 'echarts';
 import { VisualMapComponent, GeoComponent } from 'echarts/components';
 import { MapChart, BarChart } from 'echarts/charts';
 import { UniversalTransition } from 'echarts/features';
 import { CanvasRenderer } from 'echarts/renderers';
-import { GeoJSONSourceInput } from 'echarts/types/src/coord/geo/geoTypes.js';
 import { GridComponent } from 'echarts/components';
 
 echarts.use([
@@ -25,6 +19,11 @@ echarts.use([
   BarChart
 ]);
 
+function getColor(value: number) {
+  const index = Math.floor((value - 0) / 1000 * 11);
+  return ['blue', '#96ff00', '#aeff00', '#ccff00', '#e4ff00', '#fcff00', '#ffde00', '#ffb400', '#ff9000', '#ff5a00', '#ff3000', 'red'][index] || 'red';
+}
+
 const ChartMap: React.FC = () => {
   const domRef = useRef<HTMLDivElement | null>(null);
   const chartRef = useRef<any | null>(null);
@@ -33,7 +32,7 @@ const ChartMap: React.FC = () => {
     if (domRef?.current) {
       console.log(111);
       chartRef.current = echarts.init(domRef.current);
-      window.addEventListener('resize', function() {
+      window.addEventListener('resize', function () {
         chartRef.current.resize();
       });
 
@@ -192,12 +191,22 @@ const ChartMap: React.FC = () => {
       });
       const mapOption = {
         visualMap: {
+          // type: 'piecewise',
           left: 'right',
+          // categories: data.map((item) => item.name),
           min: 0,
-          max: 4000,
+          max: 1000,
+          // 两个手柄对应的数值是 4 和 15
+          range: [0, 450],
           inRange: {
             // prettier-ignore
-            color: ['#313695', '#4575b4', '#74add1', '#abd9e9', '#e0f3f8', '#ffffbf', '#fee090', '#fdae61', '#f46d43', '#d73027', '#a50026']
+            color: ['blue', '#96ff00', '#aeff00', '#ccff00', '#e4ff00', '#fcff00', '#ffde00', '#ffb400', '#ff9000', '#ff5a00', '#ff3000', 'red'],
+            // color: { 'United States': 'red', 'India': 'yellow' }
+            // color: ['blue', 'yellow', 'yellow', 'red', 'red', 'red', 'red']
+            // color: ['#313695', '#4575b4', '#74add1', '#abd9e9', '#e0f3f8', '#ffffbf', '#fee090', '#fdae61', '#f46d43', '#d73027', '#a50026']
+          },
+          outOfRange: {
+            color: ['red'],
           },
           text: ['High', 'Low'],
           calculable: true
@@ -231,9 +240,10 @@ const ChartMap: React.FC = () => {
         series: {
           type: 'bar',
           id: 'population',
-          data: data.map(function (item) {
-            return item.value;
-          }),
+          data: data.map(item => ({
+            value: item.value,
+            itemStyle: { color: getColor(item.value) }
+          })),
           universalTransition: true
         }
       };

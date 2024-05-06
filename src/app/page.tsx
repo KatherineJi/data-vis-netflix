@@ -12,9 +12,9 @@ import ChartHeatmap from './components/chartHeatmap';
 
 const diagramMap = {
   map: ChartMap,
+  distribution: ChartDistribution,
   line: ChartLine,
   stacked: ChartStacked,
-  distribution: ChartDistribution,
   heatmap: ChartHeatmap
 };
 
@@ -55,7 +55,7 @@ export default function Home() {
           <div style={{ padding: '24px', background: '#eee' }}>Welcome Back!</div>
           
           <Space direction="vertical" size={16}>
-            <Card title="Global distribution View" style={{ width: 300, borderRadius: 0 }}>
+            <Card title="Global View" style={{ width: 300, borderRadius: 0 }}>
               <p>Country: 129</p>
               <p>Occurrences: 129</p>
             </Card>

@@ -24,11 +24,11 @@ function getItem(
 }
 
 const items: MenuProps['items'] = [
-  getItem('Individual View', 'sub1', <MailOutlined />, [
+  getItem('Individual View', 'sub1', <SettingOutlined />, [
     getItem('Global Distribution', 'map'),
+    getItem('Rating Distribution', 'distribution'),
     getItem('Trend Over Time - line', 'line'),
     getItem('Trend Over Time - stacked', 'stacked'),
-    getItem('Rating Distribution', 'distribution'),
     getItem('User Study', 'heatmap'),
   ]),
 

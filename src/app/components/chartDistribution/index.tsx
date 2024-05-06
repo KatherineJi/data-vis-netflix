@@ -74,14 +74,6 @@ const ChatDistribution: React.FC = () => {
             }
           }
         },
-        // toolbox: {
-        //   feature: {
-        //     dataZoom: {},
-        //     brush: {
-        //       type: ['rect', 'polygon', 'clear']
-        //     }
-        //   }
-        // },
         brush: {},
         legend: {
           data: ['TV Show', 'Movie'],
@@ -91,6 +83,10 @@ const ChatDistribution: React.FC = () => {
         xAxis: [
           {
             type: 'value',
+            name: 'Log of \nIMDB Votes',
+            nameTextStyle: {
+              padding: [0, 0, 0, -8],
+            },
             scale: true,
             axisLabel: {
               formatter: '{value}'
@@ -103,6 +99,7 @@ const ChatDistribution: React.FC = () => {
         yAxis: [
           {
             type: 'value',
+            name: 'IMDB Score',
             scale: true,
             axisLabel: {
               formatter: '{value}'
