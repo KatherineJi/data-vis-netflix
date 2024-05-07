@@ -88,10 +88,10 @@ const ChatLine: React.FC = () => {
           },
           encode: {
             x: 'Time',
-            y: 'Ratings',
-            label: ['Type', 'Ratings'],
+            y: 'Number',
+            label: ['Type', 'Number'],
             itemName: 'Time',
-            tooltip: ['Ratings']
+            tooltip: ['Number']
           }
         });
       });
@@ -118,7 +118,7 @@ const ChatLine: React.FC = () => {
         },
         yAxis: {
           // name: 'Income'
-          name: 'Ratings'
+          name: 'Number'
         },
         grid: {
           right: 120
