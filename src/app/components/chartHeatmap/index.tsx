@@ -68,6 +68,7 @@ const ChatDistribution: React.FC = () => {
         },
         xAxis: {
           type: 'category',
+          name: 'Time',
           data: time,
           splitArea: {
             show: true
@@ -75,6 +76,7 @@ const ChatDistribution: React.FC = () => {
         },
         yAxis: {
           type: 'category',
+          name: 'Subscription Type - Gender',
           data: types,
           splitArea: {
             show: true

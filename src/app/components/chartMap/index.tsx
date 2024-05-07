@@ -20,8 +20,9 @@ echarts.use([
 ]);
 
 function getColor(value: number) {
-  const index = Math.floor((value - 0) / 1000 * 11);
-  return ['blue', '#96ff00', '#aeff00', '#ccff00', '#e4ff00', '#fcff00', '#ffde00', '#ffb400', '#ff9000', '#ff5a00', '#ff3000', 'red'][index] || 'red';
+  const index = Math.floor((value - 0) / 1000 * 3);
+  return ['#fee8c8','#fdbb84','#e34a33'][index] || '#e34a33';
+  // ['blue', '#96ff00', '#aeff00', '#ccff00', '#e4ff00', '#fcff00', '#ffde00', '#ffb400', '#ff9000', '#ff5a00', '#ff3000', 'red'][index] || 'red';
 }
 
 const ChartMap: React.FC = () => {
@@ -196,18 +197,18 @@ const ChartMap: React.FC = () => {
           // categories: data.map((item) => item.name),
           min: 0,
           max: 1000,
-          // 两个手柄对应的数值是 4 和 15
-          range: [0, 450],
+          // range: [0, 450],
           inRange: {
             // prettier-ignore
-            color: ['blue', '#96ff00', '#aeff00', '#ccff00', '#e4ff00', '#fcff00', '#ffde00', '#ffb400', '#ff9000', '#ff5a00', '#ff3000', 'red'],
+            color: ['#fee8c8','#fdbb84','#e34a33'],
+            // color: ['blue', '#96ff00', '#aeff00', '#ccff00', '#e4ff00', '#fcff00', '#ffde00', '#ffb400', '#ff9000', '#ff5a00', '#ff3000', 'red'],
             // color: { 'United States': 'red', 'India': 'yellow' }
             // color: ['blue', 'yellow', 'yellow', 'red', 'red', 'red', 'red']
             // color: ['#313695', '#4575b4', '#74add1', '#abd9e9', '#e0f3f8', '#ffffbf', '#fee090', '#fdae61', '#f46d43', '#d73027', '#a50026']
           },
-          outOfRange: {
-            color: ['red'],
-          },
+          // outOfRange: {
+          //   color: ['red'],
+          // },
           text: ['High', 'Low'],
           calculable: true
         },
