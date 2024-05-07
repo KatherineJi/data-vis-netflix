@@ -84,7 +84,7 @@ const ChatDistribution: React.FC = () => {
         },
         visualMap: {
           min: 0,
-          max: 10,
+          max: 50,
           calculable: true,
           orient: 'horizontal',
           left: 'center',
