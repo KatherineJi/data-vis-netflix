@@ -24,7 +24,7 @@ export default function Home() {
   const DiagramComp: FC<{}> = diagramMap[current as keyof typeof diagramMap];
 
   return (
-    <main className={styles.main}>
+    <main className={styles.main} style={{ background: '#cdcdcd' }}>
       <div style={{ position: 'fixed', top: 0, height: '56px', width: '100%', zIndex: 1, background: 'black', color: 'white', lineHeight: '56px', paddingLeft: '32px' }}>NETFLIX</div>
       <div style={{ display: 'flex', marginTop: '56px' }}>
         <div style={{ width: 256, flexShrink: 0, background: 'white' }}>
@@ -52,7 +52,7 @@ export default function Home() {
         </div>
 
         <div style={{ width: '300px', flexShrink: 0 }}>
-          <div style={{ padding: '24px', background: '#eee' }}>Welcome Back!</div>
+          <div style={{ padding: '24px', background: '#555' }}>Welcome Back!</div>
           
           <Space direction="vertical" size={16}>
             <Card title="Global View" style={{ width: 300, borderRadius: 0 }}>
