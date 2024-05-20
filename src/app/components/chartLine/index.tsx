@@ -1,10 +1,6 @@
 'use client';
 
 import React, { useEffect, useRef } from 'react';
-import { AppstoreOutlined, MailOutlined, SettingOutlined } from '@ant-design/icons';
-import type { MenuProps } from 'antd';
-import { Menu } from 'antd';
-// import * as echarts from 'echarts';
 import dataJson from '../../../json/line-data.json';
 import * as echarts from 'echarts/core';
 import {
@@ -40,7 +36,6 @@ const ChatLine: React.FC = () => {
 
   useEffect(() => {
     if (domRef?.current) {
-      console.log(111);
       chartRef.current = echarts.init(domRef.current);
 
       const types = [
@@ -105,9 +100,6 @@ const ChatLine: React.FC = () => {
           },
           ...datasetWithFilters
         ],
-        // title: {
-        //   text: 'Income of Germany and France since 1950'
-        // },
         tooltip: {
           order: 'valueDesc',
           trigger: 'axis'
@@ -117,7 +109,6 @@ const ChatLine: React.FC = () => {
           nameLocation: 'middle'
         },
         yAxis: {
-          // name: 'Income'
           name: 'Number'
         },
         grid: {

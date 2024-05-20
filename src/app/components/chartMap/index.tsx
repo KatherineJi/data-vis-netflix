@@ -33,7 +33,6 @@ const ChartMap: React.FC = () => {
 
   useEffect(() => {
     if (domRef?.current) {
-      console.log(111);
       chartRef.current = echarts.init(domRef.current);
       window.addEventListener('resize', function () {
         chartRef.current.resize();
@@ -58,7 +57,8 @@ const ChartMap: React.FC = () => {
           width: 2
         }
       });
-      var data = [
+
+      let data = [
         { name: 'United States', value: 3690 },
         { name: 'India', value: 1046 },
         { name: 'United Kingdom', value: 806 },
@@ -192,26 +192,15 @@ const ChartMap: React.FC = () => {
       data.sort(function (a, b) {
         return a.value - b.value;
       });
+
       const mapOption = {
         visualMap: {
-          // type: 'piecewise',
           left: 'right',
-          // categories: data.map((item) => item.name),
           min: 0,
           max: 4000,
-          // range: [0, 450],
           inRange: {
-            // prettier-ignore
             color: colorSet,
-            // color: ['#fee8c8','#fdbb84','#e34a33'],
-            // color: ['blue', '#96ff00', '#aeff00', '#ccff00', '#e4ff00', '#fcff00', '#ffde00', '#ffb400', '#ff9000', '#ff5a00', '#ff3000', 'red'],
-            // color: { 'United States': 'red', 'India': 'yellow' }
-            // color: ['blue', 'yellow', 'yellow', 'red', 'red', 'red', 'red']
-            // color: ['#313695', '#4575b4', '#74add1', '#abd9e9', '#e0f3f8', '#ffffbf', '#fee090', '#fdae61', '#f46d43', '#d73027', '#a50026']
           },
-          // outOfRange: {
-          //   color: ['red'],
-          // },
           text: ['High', 'Low'],
           calculable: true
         },
@@ -229,12 +218,12 @@ const ChartMap: React.FC = () => {
       };
       const barOption = {
         xAxis: {
-          type: 'value'
+          type: 'value',
         },
         yAxis: {
           type: 'category',
           axisLabel: {
-            rotate: 30
+            rotate: 30,
           },
           data: data.map(function (item) {
             return item.name;
@@ -251,6 +240,7 @@ const ChartMap: React.FC = () => {
           universalTransition: true
         }
       };
+
       let currentOption: (typeof mapOption | typeof barOption) = mapOption;
       chartRef.current.setOption(mapOption);
       setInterval(function () {

@@ -26,14 +26,9 @@ const ChatDistribution: React.FC = () => {
 
   useEffect(() => {
     if (domRef?.current) {
-      console.log(111);
       chartRef.current = echarts.init(domRef.current);
 
       const option = {
-        // title: {
-        //   text: 'Movie and TV Show height and weight distribution',
-        //   subtext: 'Data from: Heinz 2003'
-        // },
         grid: {
           left: '3%',
           right: '7%',
@@ -41,11 +36,9 @@ const ChatDistribution: React.FC = () => {
           containLabel: true
         },
         tooltip: {
-          // trigger: 'axis',
           showDelay: 0,
           formatter: function (params: any) {
             if (params.value.length > 1) {
-              console.log('params1', params);
               return (
                 (params.value[2] || '') +
                 ' :<br/>Votes:' +
@@ -55,7 +48,6 @@ const ChatDistribution: React.FC = () => {
                 
               );
             } else {
-              console.log('params2', params);
               return (
                 params.seriesName +
                 ' :<br/>' +

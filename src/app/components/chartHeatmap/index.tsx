@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useEffect, useRef } from 'react';
-import dataJson from '../../../json/life-expectancy-table.json';
 import * as echarts from 'echarts/core';
 import {
   TitleComponent,
@@ -40,7 +39,6 @@ const ChatDistribution: React.FC = () => {
 
   useEffect(() => {
     if (domRef?.current) {
-      console.log(111);
       chartRef.current = echarts.init(domRef.current);
 
       const types = [

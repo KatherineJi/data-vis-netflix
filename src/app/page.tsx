@@ -1,7 +1,7 @@
 'use client';
 
 import { FC, useState } from 'react';
-import styles from "./page.module.css";
+import styles from './page.module.css';
 import Menu from './components/menu';
 import { Card, Space } from 'antd';
 import ChartMap from './components/chartMap';
